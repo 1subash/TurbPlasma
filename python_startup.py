@@ -1,9 +1,9 @@
 import sys
 import os
-if os.path.exists(os.environ['HOME']+'/Codes/TurbPlasma'):
-   sys.path.insert(0,os.environ['HOME']+'/Codes/TurbPlasma/')
-if os.path.exists(os.environ['HOME']+'/Codes/Py3D'):
-   sys.path.insert(0,os.environ['HOME']+'/Codes/Py3D/')
+if os.path.exists(os.environ['HOME']+'/TurbPlasma'):
+   sys.path.insert(0,os.environ['HOME']+'/TurbPlasma/')
+if os.path.exists(os.environ['HOME']+'/Py3D'):
+   sys.path.insert(0,os.environ['HOME']+'/Py3D/')
 import numpy as np
 import scipy as sp
 #import pyqtgraph as pg
@@ -49,3 +49,32 @@ def calc_dist(a,b,nbins):
 ##################################################
 
 from subs import *
+
+
+Py3D_path = '/glade/u/home/subash/Py3D/'
+sys.path.append(Py3D_path)
+import py3d as pd
+
+which_code = 'p3dthon'
+#which_code = 'Py3D'
+
+if which_code == 'Py3D':
+    Py3D_path = '/glade/u/home/subash/Py3D/'
+    sys.path.append(Py3D_path)
+    #from vdist_plotter import VDistPlotter
+    #from movie import Movie
+    #from sub import *
+    #from PartTrace.testparticle import TPRun
+
+    from Py3D.vdist_plotter import VDistPlotter
+    from Py3D.movie import Movie
+    from Py3D.sub import *
+    from PartTrace.testparticle import TPRun
+
+elif which_code == 'p3dthon':
+    p3dthon_path = '/glade/u/home/subash/p3dthon/'
+    sys.path.append(p3dthon_path+'objects/')
+    sys.path.append(p3dthon_path+'scripts/')
+    from p3d_runs import p3d_run
+    import sub
+    from  sub import *
