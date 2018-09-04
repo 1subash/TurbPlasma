@@ -13,10 +13,7 @@ from p3d import p3d
 from p3do import p3do
 import AnalysisFunctions as af
 from scipy.ndimage import gaussian_filter as gf
-if 'cheyenne' in os.uname()[1]:
-   from CFLIB.lib import fafC as faf
-else:
-   from CFLIB.lib import faf
+from CFLIB.lib import faf
 
 
 ## Quick fix for imshow to show images in IDL like orientation
